@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>Grade Calculator</h1>
+            <p>Enter your details and marks to calculate your grade.</p>
+            <div class="input-group">
+                <label>Student Name</label>
+                <input type="text" id="studentName" placeholder="Enter your name">
+            </div>
+            <div class="input-group">
+                <label>Marks (Out of 100)</label>
+                <input type="number" id="marks" placeholder="Enter your marks">
+            </div>
+            <button onclick="calculateGrade()">
+                Calculate Grade
+            </button>
+            <div id="result" class="result">
+                Your result will appear here.
+            </div>
+        </div>
+    </div>
+     <script src="script.js"></script>
+</body>
+</html>

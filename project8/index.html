@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <input type="text" id="expenseName" placeholder=" Enter expense name">
+        <input type="number" id="expenseAmount" placeholder="Enter Amount">
+        <button onclick="addExpense()">Add Expense</button>
+        <button onclick="deleteExpense()">Delete Expense</button>
+        <div class="expense2">
+            <input type="text" id="expenseTypeName" placeholder="Enter expense name">
+            <button onclick="searchExpense()">Search</button>
+            <div id="searchItem"></div>
+        </div>
+        <div id="expenseList"></div>
+        <h2>Total : ₹<span id="total">0</span></h2>
+        <p>Number of Expense : <span id="count">0</span></p>
+        <p>Highest Expense : ₹<span id="high">0</span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
