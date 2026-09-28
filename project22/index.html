@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API User Dictionary</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <p class="tag">DAY 19 PROJECT</p>
+            <h1>API User Dictionary</h1>
+            <p class="hero-text">Explore real API data using JavaScript.</p>
+        </div>
+    </header>
+    <main class="container">
+        <section class="search-section">
+            <div>
+                <p class="section-label">USER DICTIONARY</p>
+                <h2>Find User</h2>
+            </div>
+            <input type="text" id="searchInput" placeholder="Seach by the name...">
+        </section>
+        <div id="loadingMessage" class="message loading">Loading users...</div>
+        <div id="errorMessage" class="message error">Something went wrong. Please try again.</div>
+        <section id="userList" class="user-grid"></section>
+        <div id="emptyState" class="empty-state">
+            <h3>No users found</h3>
+            <p>Try something with a different name.</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

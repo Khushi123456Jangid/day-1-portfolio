@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <!-- style file -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-dollar-sign"></i> Expense Manager</h1>
+        <!-- expense form with form tag -->
+        <form id="expenseForm">
+            <input type="text" id="title" placeholder="Expense title" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <!-- select and option tag uses -->
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="date" required>
+            <button type="submit" id="submitBtn">Add Expense</button>
+        </form>
+        <h2>
+            Total : ₹<span id="total">0</span>
+        </h2>
+        <div id="expenseList"></div>
+        <button id="clearBtn">Clear All Expenses</button>
+    </div>
+    <!-- script file -->
+    <script src="script.js"></script>
+</body>
+</html>

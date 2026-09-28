@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <!-- main container -->
+    <main class="container">
+        <!-- header -->
+         <header class="header">
+            <div class="header-icon">
+                <i class="fa-solid fa-book"></i>
+            </div>
+            <h1>My Library Book</h1>
+            <p>
+                Save and manage your favorite books
+            </p>
+         </header>
+         <!-- add book section -->
+          <section class="add-book-section">
+            <h2>Add a New Book</h2>
+            <p class="section-description">
+                Enter the book details below
+            </p>
+            <form id="bookForm">
+                <!-- book name -->
+                 <div class="form-group">
+                    <label for="bookName">Book Name</label>
+                    <input type="text" id="bookName" placeholder="Example: Atomic Habits" required>
+                 </div>
+                 <!-- Author -->
+                  <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Example: James Clear" required>
+                  </div>
+                  <!-- Submit Button -->
+                   <button type="submit" class="add-button">+ Add Button</button>
+            </form>
+          </section>
+          <!-- Books Section -->
+           <section class="books-section">
+            <div class="books-heading">
+                <div>
+                    <h2>My Books</h2>
+                    <p class="section-description">
+                        Your saved books appear here
+                    </p>
+                </div>
+                <span id="bookCount">0Books</span>
+            </div>
+            <!-- Books will appear here -->
+             <div id="bookList"></div>
+           </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

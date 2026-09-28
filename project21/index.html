@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Progress Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo"><i class="fa-solid fa-hourglass-half"></i> TaskFlow</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#about">About</a>
+            </nav>
+        </div>
+    </header>
+    <!-- hero -->
+     <section class="hero" id="home">
+        <div class="container hero-content">
+            <p class="eyebrow">PERSONAL PRODUCTIVITY</p>
+            <h1>Organize your tasks. <span>Track your progress.</span></h1>
+            <p class="hero-description">Add your daily tasks, mark them as completed, and monitor your progress in one place.</p>
+        </div>
+     </section>
+     <!-- dashboard -->
+     <main id="dashboard">
+        <section class="dashboard-section">
+            <div class="container">
+                <!-- statistics -->
+                 <div class="stats-grid">
+                    <div class="stat-card">
+                        <p>Total Tasks</p>
+                        <h2 id="totalTasks">0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p>Completed</p>
+                        <h2 id="completedTasks">0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p>Pending</p>
+                        <h2 id="pendingTasks">0</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p>Progress</p>
+                        <h2 id="progressPercent">0%</h2>
+                    </div>
+                 </div>
+                 <!-- main grid -->
+                  <div class="main-grid">
+                    <!-- form card -->
+                     <div class="form-card">
+                        <p class="section-label">TASK FORM</p>
+                        <h2>Add New Task</h2>
+                        <p class="form-description">Create a task and track its completion status.</p>
+                        <form id="taskForm">
+                            <div class="input-group">
+                                <label for="taskInput">Task Name</label>
+                                <input type="text" id="taskInput" placeholder="Enter task name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="categoryInput">Category</label>
+                                <select id="categoryInput">
+                                    <option value="">Select Category</option>
+                                    <option value="Study">Study</option>
+                                    <option value="Coding">Coding</option>
+                                    <option value="Personal">Personal</option>
+                                    <option value="Work">Work</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="primary-btn">Add Task</button>
+                        </form>
+                     </div>
+                     <!-- task card -->
+                      <div class="tasks-card">
+                                <div class="tasks-heading">
+                                    <div>
+                                    <p class="section-label">YOUR TASKS</p>
+                                    <h2>Task List</h2>
+                                    </div>
+                                    <span id="taskCount" class="task-count">0</span>
+                                </div>
+                                <!-- search -->
+                                <div class="search-area"><input type="text" id="searchInput" placeholder="Search tasks or category"></div>
+                                <!-- progress -->
+                                <div class="progress-box">
+                                    <div class="progress-top">
+                                        <span>Overall Progress</span>
+                                        <strong id="progressText">0%</strong>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div id="progressBar" class="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <!-- Task List -->
+                                <div class="task-list" id="taskList"></div>
+                                <!-- loading Message -->
+                                <div class="loading-message" id="loadingMessage">Loading task...</div>
+                                <div class="empty-state" id="emptyState">
+                                    <div class="empty-icon"><i class="fa-solid fa-file-pen"></i></div>
+                                    <h3>No tasks found</h3>
+                                    <p>Add a task or change your search.</p>
+                                </div>
+                        </div>
+                  </div>
+            </div>
+        </section>
+        <!-- about -->
+         <section class="about" id="about">
+            <div class="container about-content">
+                <p class="section-label">ABOUT TASKFLOW</p>
+                <h2>A javascript productivity dashboard</h2>
+                <p>This project combines arrays, objects, CRUD operations, DOM manipulation, search, LocalStorage and asynchronous JavaScript.</p>
+            </div>
+         </section>
+     </main>
+     <footer>
+        <p>© 2026 TaskFlow</p>
+     </footer>
+     <script src="script.js"></script>
+</body>
+</html>

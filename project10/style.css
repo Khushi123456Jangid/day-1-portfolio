@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat',sans-serif;
+    background: #f4f6f8;
+    padding: 40px 20px;
+}
+.container{
+    margin: auto;
+    background: white;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display:flex;
+    flex-direction: column;
+}
+h1, i{
+    margin-bottom: 25px;
+    font-size: 35px;
+    color: #256;
+    text-align: center;
+}
+.input-area{
+    display: flex;
+    gap: 10px;
+}
+input{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+button{
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #256;
+    color: white;
+}
+#message{
+    margin-top: 15px;
+    min-height: 20px;
+}
+#taskList{
+    margin-top: 25px;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+.delete-btn{
+    background: red;
+    font-size: 10px;
+    padding: 10px 10px;
+}

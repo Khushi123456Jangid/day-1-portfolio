@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==== Header ==== -->
+     <header class="header">
+        <div class="container">
+            <p class="small-title">
+                MY FINANCE
+            </p>
+            <h1>
+                Personal Finance Dashboard
+            </h1>
+            <p class="subtitle">
+                Track your income and expense daily.
+            </p>
+        </div>
+     </header>
+     <!-- ==== main container ==== -->
+      <main class="container">
+        <!-- summary cards -->
+         <section class="summary-grid">
+            <!-- income card -->
+            <div class="summary-card income-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-sack-dollar"></i>
+                </div>
+                <div>
+                    <p class="card-label">
+                        Total Income
+                    </p>
+                    <h2 id="totalIncome">
+                        ₹0
+                    </h2>
+                </div>
+            </div>
+            <!-- expense card -->
+             <div class="summary-card expense">
+                <div class="card-icon">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                </div>
+                <div>
+                    <p class="card-label">
+                        Total Expense
+                    </p>
+                    <h2 id="totalExpense">
+                        ₹0
+                    </h2>
+                </div>
+             </div>
+             <!-- balance card -->
+              <div class="summary-card balance-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+                <div>
+                    <p class="card-label">
+                        Remaining Balance
+                    </p>
+                    <h2 id="balance">
+                        ₹0
+                    </h2>
+                </div>
+              </div>
+         </section>
+         <!-- ==== category summary ==== -->
+          <section class="category-section">
+            <!-- section heading -->
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">
+                        ANALYSIS
+                    </p>
+                    <h2>
+                        Expense Categories
+                    </h2>
+                </div>
+            </div>
+            <!-- category grid -->
+             <div class="category-grid">
+                <!-- category cards -->
+                 <!-- card1 -->
+                 <div class="category-card">
+                    <span class="category-icon">
+                        <i class="fa-solid fa-burger"></i>
+                    </span>
+                    <div>
+                        <p>Food</p>
+                        <h3 id="foodTotal">
+                            ₹0
+                        </h3>
+                    </div>
+                 </div>
+                 <!-- card2 -->
+                  <div class="category-card">
+                    <span class="category-icon">
+                        <i class="fa-solid fa-car-side"></i>
+                    </span>
+                    <div>
+                        <p>Travel</p>
+                        <h3 id="travelTotal">₹0</h3>
+                    </div>
+                  </div>
+                  <!-- card3 -->
+                   <div class="category-card">
+                    <span class="category-icon">
+                        <i class="fa-solid fa-gifts"></i>
+                    </span>
+                    <div>
+                        <p>Shopping</p>
+                        <h3 id="shoppingTotal">₹0</h3>
+                    </div>
+                   </div>
+             </div>
+          </section>
+          <!-- ==== Transaction ==== -->
+           <section class="transactions-section">
+            <!-- heading -->
+            <div class="section-heading">
+                <div>
+                    <p class="section-label">
+                        TRANSACTIONS
+                    </p>
+                    <h2>
+                        Recent Transactions
+                    </h2>
+                </div>
+                <span id="transactionCount">
+                    0 Transactions
+                </span>
+            </div>
+            <!-- transactionList -->
+             <div id="transactionList" class="transaction-list"></div>
+           </section>
+
+      </main>
+      <script src="script.js"></script>
+</body>
+</html>
