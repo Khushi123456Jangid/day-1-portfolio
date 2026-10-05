@@ -1,0 +1,330 @@
+/* ==========================================================================
+   1. Modern Variables & Global Resets
+   ========================================================================== */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. Layout Container (Mobile-First Stack)
+   ========================================================================== */
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header/Hero */
+.hero {
+  text-align: center;
+  padding: 1rem 0 0.5rem 0;
+}
+
+.hero .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   3. Input Form Card
+   ========================================================================== */
+.form-section {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.student-form h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  color: var(--text-main);
+  background-color: var(--surface);
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.add-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.add-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   4. Directory & Filter Section
+   ========================================================================== */
+.students-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.student-count {
+  background-color: #e0e7ff;
+  color: var(--primary-hover);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Search Box Container */
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  background-color: var(--surface);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+  transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* ==========================================================================
+   5. Dynamic Student Card Styling
+   ========================================================================== */
+.student-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.2s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.student-info h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.student-email {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  word-break: break-all;
+}
+
+.student-course-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  padding: 0.625rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 2px dashed #cbd5e1;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   6. Advanced Responsive Breakpoints (Tablet & Desktop Split View)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .app {
+    padding: 2.5rem 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Turn the entire app view into a side-by-side split screen workspace */
+  .app {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    align-items: start;
+    gap: 3rem;
+    padding: 3rem 2rem;
+  }
+
+  /* Make sure the hero header stays stacked at the top across full-screen span */
+  .hero {
+    grid-column: 1 / -1;
+  }
+
+  /* Freeze the add-student card block so it stays visible while scrolling through long items lists */
+  .form-section {
+    position: sticky;
+    top: 2rem;
+  }
+}
