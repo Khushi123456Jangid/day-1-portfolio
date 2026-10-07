@@ -1,0 +1,629 @@
+/* =========================================
+   LUMA MARKET
+   APP.CSS
+   ========================================= */
+
+/* 1. DESIGN TOKENS
+   ========================================= */
+
+:root {
+  --color-bg: #05060a;
+  --color-bg-soft: #0c0e15;
+  --color-surface: #151821;
+  --color-surface-soft: #1d202a;
+
+  --color-text-main: #f5f5f7;
+  --color-text-muted: #979bb0;
+
+  --color-accent: #a8ff78;
+  --color-accent-soft: #d8ffbd;
+
+  --color-danger: #ff6b6b;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.35);
+
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  --transition-fast: 0.2s ease;
+  --transition: 0.3s ease;
+
+  --container-width: 1100px;
+}
+
+/* 2. GLOBAL RESET
+   ========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(168, 255, 120, 0.07),
+      transparent 40%
+    ),
+    var(--color-bg);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* Accessible focus */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* 3. LAYOUT (MAIN, HEADER)
+   ========================================= */
+
+main {
+  min-height: 100vh;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* Header text */
+main > h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  letter-spacing: -0.08em;
+  font-weight: 900;
+}
+
+main > h1::first-letter {
+  color: var(--color-accent);
+}
+
+main > p:nth-of-type(1) {
+  margin-top: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+}
+
+main > p:nth-of-type(2) {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+/* Base spacing between sections */
+section {
+  margin-top: 26px;
+}
+
+/* 4. USER AREA & AUTH BUTTONS
+   ========================================= */
+
+.user-area {
+  margin: 20px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.user-area span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.user-area button,
+main > button { /* "Login" button when logged out */
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  background: var(--color-accent);
+  color: #05060a;
+  font-weight: 700;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.user-area button:hover,
+main > button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(168, 255, 120, 0.18);
+  background-color: var(--color-accent-soft);
+}
+
+/* 5. FILTERS (category + sort)
+   ========================================= */
+
+.controls-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.controls-section select {
+  min-width: 150px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-main);
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.controls-section select:hover {
+  border-color: var(--color-accent);
+}
+
+/* 6. SEARCH INPUT
+   ========================================= */
+
+.search-section input[type="text"] {
+  width: min(100%, 320px);
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-main);
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.search-section input[type="text"]::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-section input[type="text"]:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(168, 255, 120, 0.12);
+  background-color: var(--color-bg-soft);
+}
+
+/* 7. PRODUCT GRID
+   ========================================= */
+
+.products-section {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(230px, 1fr)
+  );
+  gap: 18px; /* space between product cards */
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+  position: relative;
+  padding: 18px 18px 20px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    140deg,
+    #171a23,
+    #101219
+  );
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  filter: blur(90px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 255, 120, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover::before {
+  opacity: 0.13;
+}
+
+.product-card h2 {
+  font-size: 1.05rem;
+  letter-spacing: -0.03em;
+}
+
+.product-card p {
+  font-size: 0.88rem;
+}
+
+/* price */
+.product-card p:nth-of-type(1) {
+  margin-top: 4px;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* category */
+.product-card p:nth-of-type(2) {
+  color: var(--color-text-muted);
+}
+
+/* rating */
+.product-card p:nth-of-type(3) {
+  color: #f6d365;
+}
+
+.product-card button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 9px 0;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-accent);
+  color: #05060a;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.product-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(168, 255, 120, 0.2);
+  background-color: var(--color-accent-soft);
+}
+
+/* 8. CART (Cart component)
+   ========================================= */
+
+.cart-section {
+  margin-top: 30px;
+}
+
+.cart {
+  padding: 24px 22px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: linear-gradient(
+    145deg,
+    #151821,
+    #0b0d13
+  );
+  box-shadow: var(--shadow-soft);
+}
+
+.cart > h2 {
+  font-size: 1.4rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+}
+
+.cart > p {
+  text-align: center;
+  padding: 26px 0;
+  color: var(--color-text-muted);
+}
+
+/* Container for items (the <div> inside Cart) */
+.cart > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Single cart item */
+.cart-item {
+  display: grid;
+  grid-template-columns: 2fr auto;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item h3 {
+  font-size: 0.98rem;
+}
+
+.cart-item > p {
+  justify-self: end;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Quantity controls */
+.cart-item > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-item > div button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.cart-item > div button:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: #05060a;
+}
+
+.cart-item > div span {
+  min-width: 22px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Remove button */
+.cart-item > button {
+  justify-self: end;
+  align-self: center;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.cart-item > button:hover {
+  background: rgba(255, 107, 107, 0.18);
+  transform: translateY(-1px);
+}
+
+/* 9. LOGIN MODAL (Login component)
+   ========================================= */
+
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.25s ease-out;
+}
+
+.login-modal {
+  position: relative;
+  width: min(100%, 420px);
+  padding: 30px 26px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: radial-gradient(
+      circle at -10% -10%,
+      rgba(168, 255, 120, 0.18),
+      transparent 38%
+    ),
+    #101219;
+  box-shadow: 0 26px 90px rgba(0, 0, 0, 0.7);
+  animation: modalIn 0.3s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.close-btn:hover {
+  background: var(--color-accent);
+  color: #05060a;
+  transform: rotate(90deg);
+}
+
+.login-modal > p:first-of-type {
+  margin-bottom: 6px;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.login-modal h2 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+  letter-spacing: -0.05em;
+}
+
+.login-description {
+  margin-bottom: 22px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-main);
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.form-group input::placeholder {
+  color: #72768a;
+}
+
+.form-group input:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(168, 255, 120, 0.2);
+  background-color: var(--color-bg-soft);
+}
+
+.login-submit {
+  margin-top: 4px;
+  width: 100%;
+  min-height: 46px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-accent);
+  color: #05060a;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(168, 255, 120, 0.22);
+  background-color: var(--color-accent-soft);
+}
+
+/* 10. ANIMATIONS
+   ========================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 11. RESPONSIVE
+   ========================================= */
+
+@media (max-width: 640px) {
+  main {
+    padding-inline: 16px;
+  }
+
+  .controls-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products-section {
+    grid-template-columns: 1fr;
+  }
+
+  .cart {
+    padding-inline: 18px;
+  }
+
+  .login-modal {
+    padding-inline: 20px;
+  }
+
+  .user-area {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
