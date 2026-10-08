@@ -1,0 +1,182 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0d12;
+    color: white;
+}
+
+main {
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+nav {
+    height: 70px;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #151821;
+    border-bottom: 1px solid #292d38;
+}
+
+nav h2 {
+    color: #a8ff78;
+    letter-spacing: 2px;
+}
+
+nav div {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #a8ff78;
+}
+
+/* Dashboard */
+
+main > h1 {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 42px;
+}
+
+main > p {
+    margin-top: 12px;
+    text-align: center;
+    color: #999;
+}
+
+/* Profile */
+
+.profile-card {
+    width: 400px;
+    margin: 50px auto;
+
+    padding: 30px;
+
+    background: #151821;
+
+    border: 1px solid #292d38;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.profile-card h2 {
+    margin-bottom: 25px;
+    color: #a8ff78;
+}
+
+.profile-card p {
+    margin: 15px 0;
+    color: #aaa;
+}
+
+.profile-card strong {
+    color: white;
+}
+/* Dashboard */
+
+.dashboard {
+    width: min(1000px, 90%);
+    margin: 60px auto;
+}
+
+.dashboard-heading {
+    margin-bottom: 30px;
+}
+
+.dashboard-heading p {
+    margin-bottom: 8px;
+    color: #a8ff78;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.dashboard-heading h2 {
+    font-size: 30px;
+}
+
+/* Dashboard cards */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    padding: 25px;
+
+    background: #151821;
+
+    border: 1px solid #292d38;
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    border-color: #a8ff78;
+}
+
+.dashboard-card span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 8px;
+}
+
+.dashboard-card p {
+    color: #888;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        padding: 0 20px;
+    }
+
+    nav div {
+        gap: 12px;
+    }
+
+    main > h1 {
+        font-size: 30px;
+    }
+
+    .profile-card {
+        width: 90%;
+    }
+}
+
