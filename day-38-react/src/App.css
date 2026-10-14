@@ -1,0 +1,112 @@
+/* App.css */
+
+/* Center everything on the viewport */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Form container layout */
+.form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1.5px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Individual input wrapper blocks */
+.form-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+/* Label styling with accessible pointing features */
+.form-card label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+/* Input fields styling */
+.form-card input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus indicator for input fields */
+.form-card input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Submit button styling */
+.form button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+/* Submit button hover and active feedback states */
+.form button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+
+.form button[type="submit"]:active {
+  background-color: #1e40af;
+}
+
+/* Output card displaying live data */
+.info-card {
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1.5px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Live display typography */
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+  word-break: break-word;
+}
+
+.email {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+  word-break: break-word;
+}
