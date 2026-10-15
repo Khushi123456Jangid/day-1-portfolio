@@ -110,3 +110,12 @@
   margin: 0;
   word-break: break-word;
 }
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    margin-top: 10px;
+}

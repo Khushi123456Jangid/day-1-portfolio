@@ -2,9 +2,25 @@ import { useState } from "react";
 function SimpleForm(){
     let [name,setName]=useState("");
     let [email,setEmail]=useState("");
+    let [error,setError]=useState("");
+    let [success,setSuccess]=useState("");
     function handleSubmit(event){
-        event.preventDefault();
-        alert('Form submitted');
+        event.preventDefault()
+        setError("")
+        setSuccess("")
+        if(name.trim()===""){
+            setError("Enter the student name!")
+            return;
+        }
+        if(email.trim()===""){
+            setError("Enter the email!")
+            return;
+        }
+        if(!email.includes("@") || !email.includes(".")){
+            setError("Please enter valid email!")
+            return;
+        }
+        setSuccess("Form submitted");
     }
     return(
         <div className="container">
@@ -22,6 +38,14 @@ function SimpleForm(){
             <div className="info-card">
                 <h1 className="name">Hello, {name}</h1>
                 <p className="email">Email Address : {email}</p>
+                {error && (
+                    <p className="error">{error}</p>
+                )}
+                {
+                    success && (
+                        <p className="success">{success}</p>
+                    )
+                }
             </div>
         </div>
     )
