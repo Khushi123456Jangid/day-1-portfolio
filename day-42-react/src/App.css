@@ -75,3 +75,21 @@ body {
   color: #777;
   text-align: center;
 }
+.focus-btn {
+  display: block;
+  margin: -15px auto 30px;
+  padding: 10px 18px;
+
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+
+  background: white;
+  color: #2563eb;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.focus-btn:hover {
+  background: #eff6ff;
+}

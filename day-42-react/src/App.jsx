@@ -1,8 +1,9 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useRef } from 'react'
 import './App.css'
 
 function App() {
   let [taskInput,setTaskInput]=useState("")
+  let inputRef=useRef(null)
   let [tasks,setTasks]=useState(function(){
     let savedTask=localStorage.getItem("studyTasks")
     if(savedTask){
@@ -15,6 +16,10 @@ function App() {
         localStorage.setItem("studyTasks",JSON.stringify(tasks))
     },[tasks]
   )
+  function focusInput(){
+    inputRef.current.focus()
+    setTaskInput("")
+  }
   function addTask(){
     if(taskInput.trim()===""){
         return;
@@ -41,9 +46,10 @@ function App() {
         <div className='input-section'>
             <input type="text" value={taskInput} onChange={function(event){
                 setTaskInput(event.target.value)
-            }} />
+            }} ref={inputRef}/>
             <button onClick={addTask}>Add Task</button>
         </div>
+        <button className='focus-btn' onClick={focusInput}>🎯Focus Task Input</button>
         <h2>My Study Task</h2>
         {
             tasks.length===0?(
