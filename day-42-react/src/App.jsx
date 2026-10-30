@@ -1,9 +1,11 @@
 import { useState,useEffect,useRef } from 'react'
 import './App.css'
+import { useTheme } from './context/ThemeContext'
 
 function App() {
   let [taskInput,setTaskInput]=useState("")
   let inputRef=useRef(null)
+  let {theme,toggleTheme}=useTheme();
   let [tasks,setTasks]=useState(function(){
     let savedTask=localStorage.getItem("studyTasks")
     if(savedTask){
@@ -40,9 +42,10 @@ function App() {
     setTasks(updateTasks)
   }
   return(
-    <div className='dashboard'>
+    <div className={`dashboard ${theme}`}>
         <h1>📚 Study Dashboard</h1>
         <p className='subtitle'>React Hooks Revision Project</p>
+        <button onClick={toggleTheme} className='theme-btn'>{theme==="light"?"🌙 Dark Mode":"☀️ Light Mode"}</button>
         <div className='input-section'>
             <input type="text" value={taskInput} onChange={function(event){
                 setTaskInput(event.target.value)
